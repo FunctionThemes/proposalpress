@@ -1,1 +1,0 @@
-<?php # https://www.proposalpress.com
