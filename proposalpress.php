@@ -23,6 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'PROPOSALPRESS_VERSION', '1.0.0' );
 define( 'PROPOSALPRESS_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
