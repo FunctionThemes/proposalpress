@@ -20,7 +20,7 @@
  * @subpackage proposalpress/includes
  * @author     FunctionThemes <support@functionthemes.com>
  */
-class Plugin_Name_Deactivator {
+class ProposalPress_Deactivator {
 
 	/**
 	 * Short Description. (use period)
@@ -30,6 +30,8 @@ class Plugin_Name_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
+
+		flush_rewrite_rules();
 
 	}
 

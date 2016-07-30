@@ -20,7 +20,7 @@ if ( ! defined('ABSPATH') ) { exit; }
  *
  * @package    proposalpress
  * @subpackage proposalpress/admin
- * @author     Mindaugas Kmita <support@functionthemes.com>
+ * @author     Function Themes <support@functionthemes.com>
  */
 class ProposalPress_Admin {
 
@@ -62,6 +62,7 @@ class ProposalPress_Admin {
 	}
 
 	/**
+	 * 
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0

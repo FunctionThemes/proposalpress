@@ -61,7 +61,7 @@ global $wp_version;
 		$business_exists = get_option('proposalpress_business');
 		$general_exists  = get_option('proposalpress_general');
 		$payment_exists  = get_option('proposalpress_payments');
-		$invoices_exists = get_option('proposalpress_invoices');
+		$proposals_exists = get_option('proposalpress_proposals');
 		$quotes_exists   = get_option('proposalpress_quotes');
 		$email           = get_option('proposalpress_emails');
 
@@ -124,10 +124,10 @@ Your City AZ 12345',
 
 		}
 
-		if( ! $invoices_exists) {
+		if( ! $proposals_exists) {
 
-			$invoice_array = array(
-				'terms'         => 'Payment is due within 30 days from date of invoice. Late payment is subject to fees of 5% per month.',
+			$proposal_array = array(
+				'terms'         => 'Payment is due within 30 days from date of proposal. Late payment is subject to fees of 5% per month.',
 				'css'           => 'body {}',
 				'number'        => '0001',
 				'prefix'        => 'INV-',
@@ -135,7 +135,7 @@ Your City AZ 12345',
 				'template'      => 'template1',
 			);
 
-			update_option('proposalpress_invoices', $invoice_array);
+			update_option('proposalpress_proposals', $proposal_array);
 
 		}
 
@@ -149,7 +149,7 @@ Your City AZ 12345',
 				'increment'         => 'on',
 				'template'          => 'template1',
 				'accept_quote'      => 'on',
-				'accept_quote_text' => sprintf( __( '**Please Note: After accepting this %1s an %2s will be automatically generated. This will then become a legally binding contract.', 'proposalpress' ), proposalpress_get_quote_label(), proposalpress_get_invoice_label() ),
+				'accept_quote_text' => sprintf( __( '**Please Note: After accepting this %1s an %2s will be automatically generated. This will then become a legally binding contract.', 'proposalpress' ), proposalpress_get_quote_label(), proposalpress_get_proposal_label() ),
 			);
 
 			update_option('proposalpress', $quote_array);
@@ -165,22 +165,22 @@ Your City AZ 12345',
 			$email['footer'] = sprintf( 'Copyright %1s. %2s', date('Y'), proposalpress_get_business_name() );
 
 			$email['quote_available_subject'] = 'New quote %number% available';
-			$email['invoice_available_subject'] = 'New invoice %number% available';
+			$email['proposal_available_subject'] = 'New proposal %number% available';
 			$email['payment_received_client_subject'] = 'Thanks for your payment!';
 			$email['payment_reminder_subject'] = 'A friendly reminder';
 
 			$email['quote_available_content'] = 'Hi %client_first_name%,
 
 							You have a new quote available ( %number% ) which can be viewed at %link%.<br>';
-			$email['invoice_available_content'] = 'Hi %client_first_name%,
+			$email['proposal_available_content'] = 'Hi %client_first_name%,
 
-							You have a new invoice available ( %number% ) which can be viewed at %link%.<br>';
+							You have a new proposal available ( %number% ) which can be viewed at %link%.<br>';
 			$email['payment_received_client_content'] = 'Thanks for your payment, %client_first_name%.
 
-Your recent payment for %total% on invoice %number% has been successful.<br>';
+Your recent payment for %total% on proposal %number% has been successful.<br>';
 			$email['payment_reminder_content'] = 'Hi %client_first_name%,
 
-Just a friendly reminder that your invoice %number% for %total% %is_was% due on %due_date%.';
+Just a friendly reminder that your proposal %number% for %total% %is_was% due on %due_date%.';
 
 			update_option('proposalpress_emails', $email);
 

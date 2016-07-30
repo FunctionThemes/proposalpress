@@ -10,7 +10,7 @@
  * Plugin URI:        https://www.proposalpress.com
  * Description:       Create professional Quotes & Proposals that clients can't resist.
  * Version:           1.0.0
- * Author:            Mindaugas Kmita
+ * Author:            Function Themes
  * Author URI:        https://www.functionthemes.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -22,6 +22,8 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+define( 'PROPOSALPRESS_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
